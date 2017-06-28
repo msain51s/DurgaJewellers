@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/white"
+    tools:context="com.sdj_jewellers.HomeActivity">
+    <FrameLayout
+        android:id="@+id/content_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"/>
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/toolbar_bg"
+            app:popupTheme="@style/AppTheme.PopupOverlay" >
+
+        <TextView
+            android:id="@+id/toolbar_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/btn_text_color"
+            android:textSize="18sp"
+            android:layout_gravity="center"/>
+
+            <FrameLayout
+                android:id="@+id/cartLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="right|center_vertical"
+                >
+
+                <ImageView
+                    android:id="@+id/toolbar_cart_icon"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/cart_icon"
+                    android:layout_gravity="center_vertical|right"
+                    />
+
+                <TextView
+                    android:id="@+id/cart_countText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|right"
+                    android:background="@drawable/cart_count_text_bg"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:text="100"
+                    android:padding="3dp"
+                    android:visibility="gone"
+                    android:textColor="@android:color/white"
+                    android:textSize="10sp"/>
+            </FrameLayout>
+
+
+            <ImageView
+                android:id="@+id/toolbar_search_icon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginRight="15dp"
+                android:layout_gravity="right|center_vertical"
+                android:src="@drawable/search_icon"
+                />
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+   <!-- <include layout="@layout/content_home"/>-->
+
+</RelativeLayout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sdj_jewellers.ProductDetailActivity">
+
+    <TextView
+        android:id="@+id/addToCart_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add To Cart"
+        android:textSize="17sp"
+        android:gravity="center"
+        android:textColor="@color/btn_text_color"
+        android:background="@drawable/toolbar_bg"
+        android:padding="10dp"
+        android:layout_alignParentBottom="true"
+        android:onClick="clickAddToCart"/>
+<ScrollView
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_above="@+id/addToCart_btn"
+    >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+ <android.support.v7.widget.CardView
+     android:id="@+id/detail_image_layout"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     app:cardElevation="2dp"
+     app:cardBackgroundColor="@color/white"
+     android:layout_marginBottom="10dp">
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+      <android.support.v4.view.ViewPager
+          android:id="@+id/product_detail_image_viewPager"
+          android:layout_width="match_parent"
+          android:layout_height="200dp"/>
+      <com.viewpagerindicator.CirclePageIndicator
+          android:id="@+id/indicator"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:padding="10dip"
+          android:layout_below="@+id/product_detail_image_viewPager"
+          app:radius="6dp"
+          app:fillColor="@color/pink"
+          app:pageColor="@color/light_pink"
+          app:strokeColor="@color/pink"/>
+
+  <TextView
+      android:id="@+id/product_name_text"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textColor="@color/btn_text_color"
+      android:textSize="18sp"
+      android:layout_margin="10dp"
+      android:layout_below="@+id/indicator"
+      android:layout_centerHorizontal="true"/>
+  </RelativeLayout>
+ </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/excerpt_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/detail_image_layout"
+        app:cardElevation="2dp"
+        app:cardBackgroundColor="@color/white"
+        android:layout_marginBottom="10dp">
+
+            <TextView
+                android:id="@+id/product_excerpt_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/pink"
+                android:textSize="18sp"
+                android:layout_margin="10dp"
+                android:layout_centerHorizontal="true"/>
+    </android.support.v7.widget.CardView>
+</LinearLayout>
+</ScrollView>
+
+
+</RelativeLayout>

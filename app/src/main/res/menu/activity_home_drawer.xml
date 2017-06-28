@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+
+    >
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home_menu_icon"
+            android:title="Home"
+            />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/gallery_menu_icon"
+            android:title="Gallery" />
+        <item
+            android:id="@+id/nav_basket"
+            android:icon="@drawable/basket_menu_icon"
+            android:title="Cart" />
+        <item
+            android:id="@+id/nav_about_us"
+            android:icon="@drawable/about_us_menu_icon"
+            android:title="About Us" />
+        <item
+            android:id="@+id/nav_reach_us"
+            android:icon="@drawable/contact_us_menu_icon"
+            android:title="Reach Us" />
+        <item
+            android:id="@+id/nav_education"
+            android:icon="@drawable/education_menu_icon"
+            android:title="Event" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/logout_menu_icon"
+            android:title="Logout"
+            />
+        <item
+            android:id="@+id/nav_footer_spacer1"
+            android:checkable="false"
+            android:enabled="false"
+            android:title=""
+            />
+        <item
+            android:id="@+id/nav_footer_spacer2"
+            android:checkable="false"
+            android:enabled="false"
+            android:title=""
+            />
+        <item
+            android:id="@+id/nav_footer_spacer3"
+            android:checkable="false"
+            android:enabled="false"
+            android:title=""
+            />
+        <item
+            android:id="@+id/nav_footer_spacer4"
+            android:checkable="false"
+            android:enabled="false"
+            android:title=""
+            />
+    </group>
+
+   <!-- <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item>-->
+
+</menu>

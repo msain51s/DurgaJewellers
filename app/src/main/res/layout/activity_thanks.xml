@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sdj_jewellers.ThanksActivity">
+
+    <TextView
+        android:id="@+id/thank_message_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textSize="30sp"
+        android:text="THANKS FOR YOUR ORDER WE WILL CONTACT YOU SOON"
+        android:gravity="center"
+        android:textColor="@color/green"
+        android:layout_centerInParent="true"
+        android:layout_margin="15dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:gravity="center"
+        android:text="Back To Home"
+        android:elevation="4dp"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:background="@drawable/btn_bg"
+        android:layout_below="@+id/thank_message_text"
+        android:layout_centerHorizontal="true"
+        android:onClick="clickBackToHome"/>
+</RelativeLayout>

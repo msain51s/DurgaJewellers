@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#3F51B5</color>
+
+    <color name="colorPrimaryDark">#303F9F</color>
+
+    <color name="colorAccent">#FF4081</color>
+
+
+    <color name="black_overlay">#66000000</color>
+
+    <color name="start_color">#3f4c6b</color>
+
+    <color name="end_color">#606c88</color>
+
+    <color name="white">#ffffff</color>
+
+    <color name="black">#000000</color>
+
+
+    <color name="pink">#FB6585</color>
+
+    <color name="light_pink">#fdb8ad</color>
+
+    <color name="red">#ff0000</color>
+
+    <color name="light_black">#323232</color>
+
+    <color name="green">#38b259</color>
+
+
+    <color name="editText_bgColor">#3E3F43</color>
+
+    <color name="btn_start_color">#EEB8C5</color>
+
+    <color name="btn_end_color">#FB6585</color>
+
+    <color name="btn_text_color">#DF113F</color>
+
+    <color name="cart_counter_color">#ff0008</color>
+
+</resources>

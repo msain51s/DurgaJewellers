@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/forget_bg"
+    tools:context="com.sdj_jewellers.SignUpVerifyActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/forget_logo_durga"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="30dp"
+            android:visibility="visible"
+            />
+
+        <EditText
+            android:id="@+id/otp_editText_signUpVerify"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:inputType="textNoSuggestions"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:hint="OTP"
+            android:background="@drawable/edit_text_sdj"
+            />
+
+        <TextView
+            android:id="@+id/confirm_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:padding="10dp"
+            android:gravity="center"
+            android:text="Confirm"
+            android:textColor="@color/btn_text_color"
+            android:textSize="18sp"
+            android:textAllCaps="false"
+            android:background="@drawable/btn_bg"
+            android:onClick="clickConfirm"/>
+
+        <TextView
+            android:id="@+id/resendOTP_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:padding="10dp"
+            android:gravity="center"
+            android:text="Resend OTP"
+            android:textColor="@color/btn_text_color"
+            android:textSize="18sp"
+            android:textAllCaps="false"
+            android:background="@drawable/btn_bg"
+            android:onClick="clickResendOTP"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back To Login"
+            android:textSize="15sp"
+            android:padding="5dp"
+            android:textColor="@color/white"
+            android:layout_gravity="center_horizontal"
+            android:onClick="backToLogin"/>
+    </LinearLayout>
+
+</RelativeLayout>
