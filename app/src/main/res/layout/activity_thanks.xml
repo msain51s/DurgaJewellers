@@ -4,8 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/forget_bg"
     tools:context="com.sdj_jewellers.ThanksActivity">
-
+<ImageView
+    android:id="@+id/logo"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:src="@drawable/login_logo_durga"
+    android:layout_marginTop="200dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"/>
     <TextView
         android:id="@+id/thank_message_text"
         android:layout_width="wrap_content"
@@ -15,22 +23,23 @@
         android:textSize="30sp"
         android:text="THANKS FOR YOUR ORDER WE WILL CONTACT YOU SOON"
         android:gravity="center"
-        android:textColor="@color/green"
-        android:layout_centerInParent="true"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
         android:layout_margin="15dp"
+        android:layout_below="@+id/logo"
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="8dp"
+        android:layout_marginTop="10dp"
         android:paddingBottom="8dp"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
         android:gravity="center"
-        android:text="Back To Home"
-        android:elevation="4dp"
-        android:textColor="@color/white"
+        android:text="BACK TO GALLERY"
+        android:textColor="@color/btn_text_color"
         android:textAllCaps="false"
         android:background="@drawable/btn_bg"
         android:layout_below="@+id/thank_message_text"

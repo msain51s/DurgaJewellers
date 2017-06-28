@@ -245,7 +245,7 @@ public class Utils {
         TextView submitButton= (TextView) prompt_view.findViewById(R.id.quantity_submit_btn);
         TextView cancelButton= (TextView) prompt_view.findViewById(R.id.quantity_cancel_btn);
         if(itemUpdateOrAdd==0){
-            submitButton.setText("Add To Bag");
+            submitButton.setText("Add To Cart");
         }else if(itemUpdateOrAdd==1){
             submitButton.setText("Update Quantity");
         }
