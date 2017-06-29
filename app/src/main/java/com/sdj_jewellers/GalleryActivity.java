@@ -1,5 +1,6 @@
 package com.sdj_jewellers;
 
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -56,6 +57,21 @@ public class GalleryActivity extends BaseActivity implements ResponseListener{
     }
 
     @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        getAllCategories();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(preference.getCART_COUNT()!=0) {
+            cart_countText.setVisibility(View.VISIBLE);
+            cart_countText.setText(""+preference.getCART_COUNT());
+        }else
+            cart_countText.setVisibility(View.GONE);
+    }
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int itemId = item.getItemId();
         switch (itemId) {
@@ -92,7 +108,7 @@ public class GalleryActivity extends BaseActivity implements ResponseListener{
         JSONObject json = new JSONObject();
         try {
 
-            json.put("", "");
+            json.put("userId", preference.getUSER_ID());
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -125,7 +141,7 @@ public class GalleryActivity extends BaseActivity implements ResponseListener{
                             String status=jsonObject1.getString("status");
                             if(status.equalsIgnoreCase("true")){
                                 jsonArray=jsonObject1.getJSONArray("record");
-                            }
+
                             GalleryModel model = null;
                             list.clear();
 
@@ -137,16 +153,23 @@ public class GalleryActivity extends BaseActivity implements ResponseListener{
                                     model.setTermId(jsonObject.getString("term_id"));
                                     model.setName(jsonObject.getString("name"));
                                     model.setProductCount(jsonObject.getString("product_count"));
-                                    if(jsonObject.getString("image")!=null && !jsonObject.getString("image").equalsIgnoreCase("null"))
+                                    if (jsonObject.getString("image") != null && !jsonObject.getString("image").equalsIgnoreCase("null"))
                                         model.setImageUrl(jsonObject.getString("image"));
 
                                     list.add(model);
                                 }
-                      //          getSupportActionBar().setTitle("Booking ("+booking_list.size()+")");
-                      //          recyclerView.setAdapter(new GalleryListAdapter(GalleryActivity.this,list));
+                                //          getSupportActionBar().setTitle("Booking ("+booking_list.size()+")");
+                                //          recyclerView.setAdapter(new GalleryListAdapter(GalleryActivity.this,list));
                                 mAdapter.notifyDataSetChanged();
+                                if(jsonObject1.getInt("cartCount")!=0) {
+                                    preference.setCART_COUNT(jsonObject1.getInt("cartCount"));
+                                    cart_countText.setVisibility(View.VISIBLE);
+                                    cart_countText.setText(""+jsonObject1.getInt("cartCount"));
+                                }
+                            }
                             }else{
-                                Toast.makeText(GalleryActivity.this,jsonObject1.getString("msg"),Toast.LENGTH_LONG).show();
+                              //  Toast.makeText(GalleryActivity.this,jsonObject1.getString("msg"),Toast.LENGTH_LONG).show();
+                                Utils.showCommonInfoPrompt(GalleryActivity.this,"Failed",jsonObject1.getString("msg"));
                             }
 
                             Log.d("json_response", response.getData());

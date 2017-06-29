@@ -18,6 +18,16 @@ public class Preference {
     public String MOBILE_NUMBER="mobile_number";
     public String FIRST_NAME="firstName";
 
+    public int getCART_COUNT() {
+        return sharedpreferences.getInt(CART_COUNT,0);
+    }
+
+    public void setCART_COUNT(int CART_COUNT) {
+        editor.putInt(this.CART_COUNT,CART_COUNT);
+        editor.commit();
+    }
+
+    public String CART_COUNT="cartCount";
     public String getLAST_NAME() {
         return sharedpreferences.getString(LAST_NAME,"");
     }

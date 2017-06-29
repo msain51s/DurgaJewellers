@@ -68,7 +68,10 @@ public class GalleryListAdapter extends RecyclerView.Adapter<GalleryListAdapter.
         myViewHolder.itemCount.setText(mListData.get(i).getProductCount()+" Items");
         if(i==0) {
             if(mListData.get(i).getImageUrl()==null)
-              myViewHolder.imageView.setImageResource(R.drawable.category_banner_01);
+            Glide.with(ctx)
+                    .load(R.drawable.category_banner_01)
+                    .placeholder(R.drawable.place_holder)
+                    .into(myViewHolder.imageView);
             else
                 Glide.with(ctx)
                         .load(mListData.get(i).getImageUrl())
@@ -77,7 +80,10 @@ public class GalleryListAdapter extends RecyclerView.Adapter<GalleryListAdapter.
         }
         else if(i==1) {
             if(mListData.get(i).getImageUrl()==null)
-              myViewHolder.imageView.setImageResource(R.drawable.category_banner_02);
+            Glide.with(ctx)
+                    .load(R.drawable.category_banner_02)
+                    .placeholder(R.drawable.place_holder)
+                    .into(myViewHolder.imageView);
             else
                 Glide.with(ctx)
                         .load(mListData.get(i).getImageUrl())
@@ -86,8 +92,18 @@ public class GalleryListAdapter extends RecyclerView.Adapter<GalleryListAdapter.
         }
         else if(i==2) {
             if(mListData.get(i).getImageUrl()==null)
-               myViewHolder.imageView.setImageResource(R.drawable.category_banner_03);
+            Glide.with(ctx)
+                    .load(R.drawable.category_banner_03)
+                    .placeholder(R.drawable.place_holder)
+                    .into(myViewHolder.imageView);
             else
+                Glide.with(ctx)
+                        .load(mListData.get(i).getImageUrl())
+                        .placeholder(R.drawable.place_holder)
+                        .into(myViewHolder.imageView);
+        }
+        else{
+            if(mListData.get(i).getImageUrl()!=null)
                 Glide.with(ctx)
                         .load(mListData.get(i).getImageUrl())
                         .placeholder(R.drawable.place_holder)

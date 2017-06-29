@@ -41,6 +41,7 @@ public class CategoryInfoAdapter extends RecyclerView.Adapter<CategoryInfoAdapte
             public void onClick(View v) {
                /* Uri gmmIntentUri = Uri.parse("google.navigation:q="+mListData.get(i).getLatitude()+","+mListData.get(i).getLongitude());
               */  Intent intent = new Intent(ctx, ProductDetailActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                   intent.putExtra("model", mListData.get(i));
                 ctx.startActivity(intent);
             }

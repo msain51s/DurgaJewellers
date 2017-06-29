@@ -26,7 +26,15 @@ public class ReachUsActivity extends BaseActivity {
         webView.getSettings().setJavaScriptEnabled(true);
         webView.loadUrl("http://shridurgajewellers.com/contact-mobi/");
     }
-
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(preference.getCART_COUNT()!=0) {
+            cart_countText.setVisibility(View.VISIBLE);
+            cart_countText.setText(""+preference.getCART_COUNT());
+        }else
+            cart_countText.setVisibility(View.GONE);
+    }
     public class myWebClient extends WebViewClient
     {
         @Override

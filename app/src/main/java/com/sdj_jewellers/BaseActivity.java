@@ -110,11 +110,13 @@ Preference preference;
         if (id == R.id.nav_home) {
             startActivity(new Intent(BaseActivity.this,HomeActivity.class));
         } else if (id == R.id.nav_gallery) {
-            startActivity(new Intent(BaseActivity.this,GalleryActivity.class));
+            Intent intent=new Intent(BaseActivity.this,GalleryActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_education) {
             startActivity(new Intent(BaseActivity.this,EventActivity.class));
         } else if (id == R.id.nav_basket) {
-            startActivity(new Intent(BaseActivity.this,CartActivity.class));
+            Intent intent=new Intent(BaseActivity.this,CartActivity.class);
+            startActivity(intent);
         }else if (id == R.id.nav_logout) {
             preference.clearAllPrefereces();
             Intent intent=new Intent(BaseActivity.this,LoginActivity.class);

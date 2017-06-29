@@ -5,5 +5,5 @@ package com.sdj_jewellers.utility;
  */
 public class Connection {
 
-    public static String BASE_URL="http://prithvirajjewels.com/API/durga/";
+    public static String BASE_URL="http://prithvirajjewels.com/API/DJdemo/";
 }

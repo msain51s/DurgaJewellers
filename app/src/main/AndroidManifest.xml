@@ -40,7 +40,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".GalleryActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:launchMode="singleTask"/>
         <activity
             android:name=".EventActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -49,10 +50,12 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".CategoryInfoActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:launchMode="singleTask"/>
         <activity
             android:name="com.sdj_jewellers.CartActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:launchMode="singleTask"/>
         <activity
             android:name=".ChangePasswordActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -64,7 +67,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ProductDetailActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            />
         <activity
             android:name=".ReachUsActivity"
             android:theme="@style/AppTheme.NoActionBar" />

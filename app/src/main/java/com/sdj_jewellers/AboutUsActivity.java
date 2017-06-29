@@ -29,7 +29,15 @@ public class AboutUsActivity extends BaseActivity {
         toolbar.setVisibility(View.VISIBLE);
         toolbarTitle.setText("About Us");
     }
-
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(preference.getCART_COUNT()!=0) {
+            cart_countText.setVisibility(View.VISIBLE);
+            cart_countText.setText(""+preference.getCART_COUNT());
+        }else
+            cart_countText.setVisibility(View.GONE);
+    }
     public class myWebClient extends WebViewClient
     {
         @Override
