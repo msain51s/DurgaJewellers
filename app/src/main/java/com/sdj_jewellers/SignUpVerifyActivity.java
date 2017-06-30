@@ -36,6 +36,10 @@ public class SignUpVerifyActivity extends AppCompatActivity implements ResponseL
     }
 
     public void backToLogin(View view){
+        loginNavigation();
+    }
+
+    public void loginNavigation(){
         Intent intent=new Intent(SignUpVerifyActivity.this,LoginActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
@@ -146,7 +150,7 @@ public class SignUpVerifyActivity extends AppCompatActivity implements ResponseL
 
                  //           Toast.makeText(SignUpVerifyActivity.this,jsonObject.getString("msg"),Toast.LENGTH_LONG).show();
                             if(status.equalsIgnoreCase("true"))
-                                Utils.showCommonInfoPrompt(SignUpVerifyActivity.this,"Success",jsonObject.getString("msg"));
+                                Utils.showCommonInfoPromptWithLoginNavigation(SignUpVerifyActivity.this,"Success",jsonObject.getString("msg"),"SignUpVerify");
                             else
                                 Utils.showCommonInfoPrompt(SignUpVerifyActivity.this,"Failed",jsonObject.getString("msg"));
                             Log.d("json_response", response.getData());

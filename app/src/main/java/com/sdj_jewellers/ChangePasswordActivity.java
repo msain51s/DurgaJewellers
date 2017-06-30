@@ -39,6 +39,10 @@ public class ChangePasswordActivity extends AppCompatActivity implements Respons
     }
 
     public void backToLogin(View view){
+        loginNavigation();
+    }
+
+    public void loginNavigation(){
         Intent intent=new Intent(ChangePasswordActivity.this,LoginActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
@@ -165,8 +169,9 @@ public class ChangePasswordActivity extends AppCompatActivity implements Respons
                             String status=jsonObject.getString("status");
 
                     //        Toast.makeText(ChangePasswordActivity.this,jsonObject.getString("msg"),Toast.LENGTH_LONG).show();
-                            if(status.equalsIgnoreCase("true"))
-                            Utils.showCommonInfoPrompt(ChangePasswordActivity.this,"Success",jsonObject.getString("msg"));
+                            if(status.equalsIgnoreCase("true")) {
+                                Utils.showCommonInfoPromptWithLoginNavigation(ChangePasswordActivity.this, "Success", jsonObject.getString("msg"),"ChangePassword");
+                            }
                             else
                                 Utils.showCommonInfoPrompt(ChangePasswordActivity.this,"Failed",jsonObject.getString("msg"));
 

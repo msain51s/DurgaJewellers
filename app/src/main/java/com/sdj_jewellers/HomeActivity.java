@@ -79,6 +79,15 @@ public class HomeActivity extends BaseActivity
             }
         });
 
+  /*Manoj Says...
+  *    suggestion display first time
+  * */
+  if(!preference.getIS_SUGGESTION_DISPLAY_FIRST_TIME()){
+      infoView.setVisibility(View.VISIBLE);
+      preference.setIS_SUGGESTION_DISPLAY_FIRST_TIME(true);
+  }else
+      infoView.setVisibility(View.GONE);
+
     }
 
     @Override

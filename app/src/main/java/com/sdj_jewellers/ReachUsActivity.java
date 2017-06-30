@@ -24,7 +24,7 @@ public class ReachUsActivity extends BaseActivity {
 
         webView.setWebViewClient(new myWebClient());
         webView.getSettings().setJavaScriptEnabled(true);
-        webView.loadUrl("http://shridurgajewellers.com/contact-mobi/");
+        webView.loadUrl("http://durgajewellerskundan.com/contact-us-mobile/");
     }
     @Override
     protected void onResume() {

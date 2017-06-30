@@ -18,6 +18,17 @@ public class Preference {
     public String MOBILE_NUMBER="mobile_number";
     public String FIRST_NAME="firstName";
 
+    public boolean getIS_SUGGESTION_DISPLAY_FIRST_TIME() {
+        return sharedpreferences.getBoolean(IS_SUGGESTION_DISPLAY_FIRST_TIME,false);
+    }
+
+    public void setIS_SUGGESTION_DISPLAY_FIRST_TIME(boolean IS_SUGGESTION_DISPLAY_FIRST_TIME) {
+        editor.putBoolean(this.IS_SUGGESTION_DISPLAY_FIRST_TIME,IS_SUGGESTION_DISPLAY_FIRST_TIME);
+        editor.commit();
+    }
+
+    public String IS_SUGGESTION_DISPLAY_FIRST_TIME="is_suggestion_display_first_time";
+
     public int getCART_COUNT() {
         return sharedpreferences.getInt(CART_COUNT,0);
     }

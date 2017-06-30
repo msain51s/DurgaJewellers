@@ -22,7 +22,7 @@ public class AboutUsActivity extends BaseActivity {
 
         webView.setWebViewClient(new myWebClient());
         webView.getSettings().setJavaScriptEnabled(true);
-        webView.loadUrl("http://shridurgajewellers.com/about-us-mobile/");
+        webView.loadUrl("http://durgajewellerskundan.com/about-us-mobile/");
     }
 
     private void setupToolbar() {

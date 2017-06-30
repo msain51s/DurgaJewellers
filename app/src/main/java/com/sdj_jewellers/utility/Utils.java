@@ -22,8 +22,10 @@ import android.widget.Toast;
 
 import com.sdj_jewellers.CartActivity;
 import com.sdj_jewellers.CategoryInfoActivity;
+import com.sdj_jewellers.ChangePasswordActivity;
 import com.sdj_jewellers.ProductDetailActivity;
 import com.sdj_jewellers.R;
+import com.sdj_jewellers.SignUpVerifyActivity;
 import com.sdj_jewellers.adapter.FilterListAdapter;
 import com.wang.avi.AVLoadingIndicatorView;
 
@@ -313,5 +315,44 @@ public class Utils {
         dialog11.show();
 
     }
+
+    public static void showCommonInfoPromptWithLoginNavigation(final Context context, String title, String message, final String from){
+//        Typeface roboto_ligh=getCustomFont(context, FontType.ROBOTO_MEDIUM);
+
+        LayoutInflater inflater=LayoutInflater.from(context);
+        View prompt_view=inflater.inflate(R.layout.info_prompt, null);
+        dialog11=new Dialog(context);
+        dialog11.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog11.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog11.setContentView(prompt_view);
+        dialog11.setCancelable(false);
+        DisplayMetrics metrics = context.getResources().getDisplayMetrics();
+        int width = metrics.widthPixels;
+        int height = metrics.heightPixels;
+
+        dialog11.getWindow().setLayout((6 * width)/9, LinearLayoutCompat.LayoutParams.WRAP_CONTENT);
+
+        final TextView title_txt= (TextView) prompt_view.findViewById(R.id.dialog_title_text);
+        //     title_txt.setTypeface(roboto_ligh);
+        title_txt.setText(title);
+        TextView message_txt= (TextView) prompt_view.findViewById(R.id.messageText);
+        message_txt.setText(message);
+
+        TextView okButton= (TextView) prompt_view.findViewById(R.id.OK_btn);
+        okButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog11.dismiss();
+                if(from.equalsIgnoreCase("ChangePassword"))
+                ((ChangePasswordActivity)context).loginNavigation();
+                else if(from.equalsIgnoreCase("SignUpVerify"))
+                    ((SignUpVerifyActivity)context).loginNavigation();
+            }
+        });
+
+        dialog11.show();
+
+    }
+
 
 }
