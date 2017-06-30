@@ -22,7 +22,6 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/register_logo_durga"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="20dp"
                 android:visibility="visible"
                 />
             <EditText
