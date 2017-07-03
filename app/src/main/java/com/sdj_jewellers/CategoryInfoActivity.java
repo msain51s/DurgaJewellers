@@ -69,7 +69,7 @@ public class CategoryInfoActivity extends BaseActivity implements ResponseListen
 
         list = new ArrayList<CategoryInfo>();
 
-        mAdapter = new CategoryInfoAdapter(this, list);
+        mAdapter = new CategoryInfoAdapter(this, list,"CategoryInfo");
         recyclerView.setAdapter(mAdapter);
 
 

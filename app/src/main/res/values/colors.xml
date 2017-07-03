@@ -40,4 +40,6 @@
 
     <color name="cart_counter_color">#ff0008</color>
 
+    <color name="grey">#dedede</color>
+
 </resources>

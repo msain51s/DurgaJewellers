@@ -22,6 +22,7 @@ public interface ResponseListener {
     public static final int REQUEST_PLACE_ORDER=13;
     public static final int REQUEST_RESEND_OTP_FOR_SIGNUP_VERIFICATION=14;
     public static final int REQUEST_RESEND_OTP_FOR_FORGOT_PASSWORD=15;
+    public static final int REQUEST_GET_SEARCH_PRODUCT_LIST=16;
 
     public void onResponse(Response response, int rid);
 }

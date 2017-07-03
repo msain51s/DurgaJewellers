@@ -26,7 +26,7 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
     public FrameLayout frameLayout;
 Preference preference;
     Toolbar toolbar;
-    ImageView toolbarCart;
+    ImageView toolbarCart,toolbar_searchIcon;
     TextView toolbarTitle,cart_countText;
     View cartIconView;
     Typeface montesarrat_bold;
@@ -45,6 +45,7 @@ Preference preference;
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("");
+        toolbar_searchIcon= (ImageView) findViewById(R.id.toolbar_search_icon);
         toolbarCart = (ImageView) findViewById(R.id.toolbar_cart_icon);
         toolbarTitle= (TextView) findViewById(R.id.toolbar_title_text);
         toolbarTitle.setTypeface(montesarrat_bold);
@@ -71,6 +72,15 @@ Preference preference;
                 startActivity(intent);
             }
         });
+
+        toolbar_searchIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(BaseActivity.this,SearchActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     @Override
@@ -108,7 +118,10 @@ Preference preference;
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-            startActivity(new Intent(BaseActivity.this,HomeActivity.class));
+            Intent intent=new Intent(BaseActivity.this,HomeActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+            finish();
         } else if (id == R.id.nav_gallery) {
             Intent intent=new Intent(BaseActivity.this,GalleryActivity.class);
             startActivity(intent);

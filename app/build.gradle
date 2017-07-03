@@ -25,6 +25,10 @@ android {
     allprojects {
         repositories {
             maven { url "https://jitpack.io" }
+
+            flatDir {
+                dirs 'libs'
+            }
         }
     }
 }
@@ -34,6 +38,7 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+    compile(name: 'material-search', ext: 'aar')
     compile 'com.android.support:appcompat-v7:22.2.1'
     compile 'com.android.support:support-v4:22.2.0'
     compile 'com.android.support:design:22.2.0'
@@ -47,4 +52,6 @@ dependencies {
     compile 'com.github.delight-im:Android-AdvancedWebView:v3.0.0'
     compile 'com.github.JakeWharton:ViewPagerIndicator:2.4.1'
     testCompile 'junit:junit:4.12'
+
+
 }

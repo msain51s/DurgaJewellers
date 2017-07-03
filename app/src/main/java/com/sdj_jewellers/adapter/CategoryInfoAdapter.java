@@ -13,6 +13,7 @@ import com.bumptech.glide.Glide;
 import com.sdj_jewellers.CategoryInfoActivity;
 import com.sdj_jewellers.ProductDetailActivity;
 import com.sdj_jewellers.R;
+import com.sdj_jewellers.SearchActivity;
 import com.sdj_jewellers.model.CategoryInfo;
 
 import java.util.List;
@@ -25,9 +26,11 @@ public class CategoryInfoAdapter extends RecyclerView.Adapter<CategoryInfoAdapte
 
     List<CategoryInfo> mListData;
     Context ctx;
-    public CategoryInfoAdapter(Context ctx, List<CategoryInfo> mListData) {
+    String from;
+    public CategoryInfoAdapter(Context ctx, List<CategoryInfo> mListData,String from) {
         this.mListData = mListData;
         this.ctx=ctx;
+        this.from=from;
     }
 
     @Override
@@ -91,7 +94,10 @@ public class CategoryInfoAdapter extends RecyclerView.Adapter<CategoryInfoAdapte
                 public void onClick(View view) {
            //         Utils.showQuantityPrompt(ctx,mListData.get(getAdapterPosition()).getPostTitle(),getAdapterPosition(),"Please Enter quantity to order");
 
-                    ((CategoryInfoActivity)ctx).checkCartProduct(getAdapterPosition());
+                    if(from.equalsIgnoreCase("CategoryInfo"))
+                        ((CategoryInfoActivity)ctx).checkCartProduct(getAdapterPosition());
+                    else if(from.equalsIgnoreCase("SearchProduct"))
+                        ((SearchActivity)ctx).checkCartProduct(getAdapterPosition());
                 }
             });
         }

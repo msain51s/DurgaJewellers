@@ -37,7 +37,8 @@
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:launchMode="singleTask"/>
         <activity
             android:name=".GalleryActivity"
             android:theme="@style/AppTheme.NoActionBar"
@@ -74,6 +75,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name="com.sdj_jewellers.BaseActivity" />
         <activity android:name=".FullImageActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".SearchActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 

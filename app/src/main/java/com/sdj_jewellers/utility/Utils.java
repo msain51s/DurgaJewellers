@@ -25,6 +25,7 @@ import com.sdj_jewellers.CategoryInfoActivity;
 import com.sdj_jewellers.ChangePasswordActivity;
 import com.sdj_jewellers.ProductDetailActivity;
 import com.sdj_jewellers.R;
+import com.sdj_jewellers.SearchActivity;
 import com.sdj_jewellers.SignUpVerifyActivity;
 import com.sdj_jewellers.adapter.FilterListAdapter;
 import com.wang.avi.AVLoadingIndicatorView;
@@ -263,6 +264,9 @@ public class Utils {
                         ((CartActivity)context).editItem(position,quantity_value);
                     else if(from.equalsIgnoreCase("ProductDetail"))
                         ((ProductDetailActivity)context).productAddToCart(quantity_value,itemUpdateOrAdd);
+                    else  if(from.equalsIgnoreCase("SearchProduct"))
+                        ((SearchActivity)context).productAddToCart(position,quantity_value,itemUpdateOrAdd);
+
                     dialog11.dismiss();
 
                 }else{
