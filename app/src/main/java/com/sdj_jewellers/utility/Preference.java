@@ -18,6 +18,17 @@ public class Preference {
     public String MOBILE_NUMBER="mobile_number";
     public String FIRST_NAME="firstName";
 
+    public static final String APP_UPGRADE_TIME="app_upgrade_time";
+
+    public String getAppUpgradeTime() {
+        return sharedpreferences.getString(APP_UPGRADE_TIME,"");
+    }
+
+    public void setAppUpgradeTime(String appUpgradeTime){
+        editor.putString(this.APP_UPGRADE_TIME,appUpgradeTime);
+        editor.commit();
+    }
+
     public boolean getIS_SUGGESTION_DISPLAY_FIRST_TIME() {
         return sharedpreferences.getBoolean(IS_SUGGESTION_DISPLAY_FIRST_TIME,false);
     }

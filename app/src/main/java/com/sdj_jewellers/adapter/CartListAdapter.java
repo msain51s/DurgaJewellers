@@ -3,6 +3,7 @@ package com.sdj_jewellers.adapter;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.widget.LinearLayoutCompat;
 import android.support.v7.widget.RecyclerView;
@@ -18,6 +19,7 @@ import com.bumptech.glide.Glide;
 import com.sdj_jewellers.CartActivity;
 import com.sdj_jewellers.R;
 import com.sdj_jewellers.model.CartModel;
+import com.sdj_jewellers.utility.FontType;
 import com.sdj_jewellers.utility.Utils;
 
 import java.util.List;
@@ -30,9 +32,11 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.MyView
 
     List<CartModel> mListData;
     Context ctx;
+    Typeface monestrrat_regular;
     public CartListAdapter(Context ctx, List<CartModel> mListData) {
         this.mListData = mListData;
         this.ctx=ctx;
+        monestrrat_regular=Utils.getCustomFont(ctx, FontType.MONESTER_RAT_REGULAR);
     }
 
     @Override
@@ -92,6 +96,8 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.MyView
             itemQuantity= (TextView) itemView.findViewById(R.id.itemQuantity_text);
             edit= (TextView) itemView.findViewById(R.id.itemEdit_text);
             removeItem= (TextView) itemView.findViewById(R.id.cartItemRemove_btn);
+
+            title.setTypeface(monestrrat_regular);
 
             removeItem.setOnClickListener(new View.OnClickListener() {
                 @Override

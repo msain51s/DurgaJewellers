@@ -14,9 +14,10 @@ public class ThanksActivity extends AppCompatActivity {
     }
 
     public void clickBackToHome(View view){
-        Intent intent=new Intent(ThanksActivity.this,HomeActivity.class);
+        Intent intent=new Intent(ThanksActivity.this,GalleryActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
+        finish();
     }
 
     @Override

@@ -25,7 +25,7 @@
        android:id="@+id/catTitle"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
-       android:textColor="@color/pink"
+       android:textColor="@color/btn_text_color"
        android:text="Title"
        android:textSize="17sp"
        android:layout_marginTop="15dp"

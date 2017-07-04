@@ -3,12 +3,16 @@ package com.sdj_jewellers.utility;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
+import android.net.Uri;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutCompat;
 import android.util.DisplayMetrics;
@@ -30,7 +34,21 @@ import com.sdj_jewellers.SignUpVerifyActivity;
 import com.sdj_jewellers.adapter.FilterListAdapter;
 import com.wang.avi.AVLoadingIndicatorView;
 
+import org.htmlcleaner.CleanerProperties;
+import org.htmlcleaner.HtmlCleaner;
+import org.htmlcleaner.TagNode;
+import org.htmlcleaner.XPatherException;
+
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+
+import cn.pedant.SweetAlert.SweetAlertDialog;
 
 /**
  * Created by bhanwar on 16/06/2017.
@@ -358,5 +376,99 @@ public class Utils {
 
     }
 
+ /*APPLICATION UPGRADE DIALOG*/
+
+    public static void showAppUpgradeDialog(final Activity ctx, String msg, boolean upgrade) {
+
+        final Preference per = new Preference(ctx);
+        final Calendar calendar=Calendar.getInstance();
+        calendar.add(Calendar.DATE,2);
+        final Date date=calendar.getTime();
+        SimpleDateFormat dateFormat=new SimpleDateFormat("dd-MMM-yyyy");
+        String dateString=null;
+
+        try{
+            dateString=dateFormat.format(date);
+        }
+        catch (Exception e){
+
+        }
+
+
+        SweetAlertDialog dialog = new SweetAlertDialog(ctx, SweetAlertDialog.CUSTOM_IMAGE_TYPE);
+        dialog.setTitleText("Upgrade Application");
+        dialog.setContentText(msg);
+        dialog.setConfirmText("Upgrade");
+        dialog.setCustomImage(ctx.getResources().getDrawable(R.drawable.app_upgrade_icon));
+        dialog.setCancelable(false);
+        final String finalDateString = dateString;
+        /*dialog.setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
+            @Override
+            public void onClick(SweetAlertDialog sDialog) {
+                sDialog.dismissWithAnimation();
+                ((Splash)ctx).continueAppFlow();
+                per.getAppUpgradeTime();
+
+            }
+        });*/
+        dialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+            @Override
+            public void onClick(SweetAlertDialog sDialog) {
+                sDialog.dismissWithAnimation();
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.sdj_jewellers"));
+                ctx.startActivity(intent);
+            }
+        })
+                .show();
+
+
+    }
+
+    public static String getAppVersionFromMarket(String playUrl) {
+
+        HtmlCleaner cleaner = new HtmlCleaner();
+        CleanerProperties props = cleaner.getProperties();
+        props.setAllowHtmlInsideAttributes(true);
+        props.setAllowMultiWordAttributes(true);
+        props.setRecognizeUnicodeChars(true);
+        props.setOmitComments(true);
+        try {
+            URL url = new URL(playUrl);
+            URLConnection conn = url.openConnection();
+            TagNode node = cleaner.clean(new InputStreamReader(conn.getInputStream()));
+            Object[] new_nodes = node.evaluateXPath("//*[@class='recent-change']");
+            Object[] version_nodes = node.evaluateXPath("//*[@itemprop='softwareVersion']");
+
+            String version = "", whatsNew = "";
+            for (Object new_node : new_nodes) {
+                TagNode info_node = (TagNode) new_node;
+                whatsNew += info_node.getAllChildren().get(0).toString().trim()
+                        + "\n";
+            }
+            if (version_nodes.length > 0) {
+                TagNode ver = (TagNode) version_nodes[0];
+                version = ver.getAllChildren().get(0).toString().trim();
+            }
+
+            //   return new String[]{version, whatsNew};
+            return version;
+
+        } catch (IOException | XPatherException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static String getAppVersionCode(Context ctx) {
+
+        PackageInfo pInfo = null;
+        try {
+            pInfo = ctx.getPackageManager().getPackageInfo(ctx.getPackageName(), 0);
+            return "" + pInfo.versionName;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
 }

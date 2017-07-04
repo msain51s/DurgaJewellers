@@ -2,6 +2,7 @@ package com.sdj_jewellers.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,8 @@ import com.sdj_jewellers.ProductDetailActivity;
 import com.sdj_jewellers.R;
 import com.sdj_jewellers.SearchActivity;
 import com.sdj_jewellers.model.CategoryInfo;
+import com.sdj_jewellers.utility.FontType;
+import com.sdj_jewellers.utility.Utils;
 
 import java.util.List;
 
@@ -27,10 +30,12 @@ public class CategoryInfoAdapter extends RecyclerView.Adapter<CategoryInfoAdapte
     List<CategoryInfo> mListData;
     Context ctx;
     String from;
+    Typeface monestrrat_regular;
     public CategoryInfoAdapter(Context ctx, List<CategoryInfo> mListData,String from) {
         this.mListData = mListData;
         this.ctx=ctx;
         this.from=from;
+        monestrrat_regular= Utils.getCustomFont(ctx, FontType.MONESTER_RAT_REGULAR);
     }
 
     @Override
@@ -88,6 +93,8 @@ public class CategoryInfoAdapter extends RecyclerView.Adapter<CategoryInfoAdapte
             title= (TextView) itemView.findViewById(R.id.catTitle);
             weight= (TextView) itemView.findViewById(R.id.catWeightText);
             addToBag= (TextView) itemView.findViewById(R.id.addToBagButton);
+
+            title.setTypeface(monestrrat_regular);
 
             addToBag.setOnClickListener(new View.OnClickListener() {
                 @Override
