@@ -29,11 +29,11 @@ public class GalleryListAdapter extends RecyclerView.Adapter<GalleryListAdapter.
 
     List<GalleryModel> mListData;
     GalleryActivity ctx;
-    Typeface montserrat_regular;
+    Typeface roboto_regular;
     public GalleryListAdapter(GalleryActivity ctx, List<GalleryModel> mListData) {
         this.mListData = mListData;
         this.ctx=ctx;
-        montserrat_regular= Utils.getCustomFont(ctx, FontType.MONESTER_RAT_REGULAR);
+        roboto_regular = Utils.getCustomFont(ctx, FontType.ROBOTO_REGULAR);
     }
 
     @Override
@@ -101,8 +101,8 @@ public class GalleryListAdapter extends RecyclerView.Adapter<GalleryListAdapter.
             imageView= (ImageView) itemView.findViewById(R.id.image_view);
             itemCount= (TextView) itemView.findViewById(R.id.noOfItemText);
 
-            title.setTypeface(montserrat_regular);
-            itemCount.setTypeface(montserrat_regular);
+            title.setTypeface(roboto_regular);
+            itemCount.setTypeface(roboto_regular);
 
             DisplayMetrics metrics = ctx.getResources().getDisplayMetrics();
          //   int width = metrics.widthPixels;

@@ -47,16 +47,16 @@ public class FullImageActivity extends AppCompatActivity implements View.OnTouch
     float oldDist = 1f;
     String savedItemClicked;
 
-    Typeface montesarrat_bold;
+    Typeface roboto_bold;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_full_image);
-        montesarrat_bold= Utils.getCustomFont(this, FontType.MONESTER_RAT_BOLD);
+        roboto_bold = Utils.getCustomFont(this, FontType.ROBOTO_BOLD);
 
         toolbar= (Toolbar) findViewById(R.id.toolbar);
         toolbarTitle= (TextView) findViewById(R.id.toolbar_title_text);
-        toolbarTitle.setTypeface(montesarrat_bold);
+        toolbarTitle.setTypeface(roboto_bold);
         toolbarTitle.setText("Full Image");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

@@ -32,11 +32,11 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.MyView
 
     List<CartModel> mListData;
     Context ctx;
-    Typeface monestrrat_regular;
+    Typeface roboto_regular;
     public CartListAdapter(Context ctx, List<CartModel> mListData) {
         this.mListData = mListData;
         this.ctx=ctx;
-        monestrrat_regular=Utils.getCustomFont(ctx, FontType.MONESTER_RAT_REGULAR);
+        roboto_regular =Utils.getCustomFont(ctx, FontType.ROBOTO_REGULAR);
     }
 
     @Override
@@ -97,7 +97,7 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.MyView
             edit= (TextView) itemView.findViewById(R.id.itemEdit_text);
             removeItem= (TextView) itemView.findViewById(R.id.cartItemRemove_btn);
 
-            title.setTypeface(monestrrat_regular);
+            title.setTypeface(roboto_regular);
 
             removeItem.setOnClickListener(new View.OnClickListener() {
                 @Override

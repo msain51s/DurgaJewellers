@@ -51,21 +51,21 @@ public class SearchActivity extends AppCompatActivity implements ResponseListene
 
     Preference preference;
     Handler handler;
-    Typeface montesarrat_bold;
+    Typeface roboto_bold;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         preference=new Preference(this);
         handler=new Handler();
-        montesarrat_bold= Utils.getCustomFont(this, FontType.MONESTER_RAT_BOLD);
+        roboto_bold = Utils.getCustomFont(this, FontType.ROBOTO_BOLD);
 
         toolbar= (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("");
         toolbarTitle= (TextView) findViewById(R.id.toolbar_title_text);
-        toolbarTitle.setTypeface(montesarrat_bold);
+        toolbarTitle.setTypeface(roboto_bold);
         toolbarTitle.setText("Search Product");
 
         recyclerView = (RecyclerView) findViewById(R.id.search_product_recyclerview);
@@ -269,7 +269,7 @@ public class SearchActivity extends AppCompatActivity implements ResponseListene
         try {
 
             json.put("postId", model.getCatID());
-            json.put("postName", model.getPostName());
+            json.put("postName", model.getPostTitle());
             json.put("postExcerpt", model.getPostExcerpt());
             json.put("userId", preference.getUSER_ID());
             json.put("quantity", qty);

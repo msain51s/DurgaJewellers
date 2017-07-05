@@ -30,12 +30,12 @@ public class CategoryInfoAdapter extends RecyclerView.Adapter<CategoryInfoAdapte
     List<CategoryInfo> mListData;
     Context ctx;
     String from;
-    Typeface monestrrat_regular;
+    Typeface roboto_regular;
     public CategoryInfoAdapter(Context ctx, List<CategoryInfo> mListData,String from) {
         this.mListData = mListData;
         this.ctx=ctx;
         this.from=from;
-        monestrrat_regular= Utils.getCustomFont(ctx, FontType.MONESTER_RAT_REGULAR);
+        roboto_regular = Utils.getCustomFont(ctx, FontType.ROBOTO_REGULAR);
     }
 
     @Override
@@ -94,7 +94,7 @@ public class CategoryInfoAdapter extends RecyclerView.Adapter<CategoryInfoAdapte
             weight= (TextView) itemView.findViewById(R.id.catWeightText);
             addToBag= (TextView) itemView.findViewById(R.id.addToBagButton);
 
-            title.setTypeface(monestrrat_regular);
+            title.setTypeface(roboto_regular);
 
             addToBag.setOnClickListener(new View.OnClickListener() {
                 @Override

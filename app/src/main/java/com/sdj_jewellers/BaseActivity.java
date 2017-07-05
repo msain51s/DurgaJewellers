@@ -29,7 +29,7 @@ Preference preference;
     ImageView toolbarCart,toolbar_searchIcon;
     TextView toolbarTitle,cart_countText;
     View cartIconView;
-    Typeface montesarrat_bold;
+    Typeface roboto_bold;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +40,7 @@ Preference preference;
         super.setContentView(fullView);*/
 
         preference=new Preference(this);
-        montesarrat_bold= Utils.getCustomFont(this, FontType.MONESTER_RAT_BOLD);
+        roboto_bold = Utils.getCustomFont(this, FontType.ROBOTO_BOLD);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -48,7 +48,7 @@ Preference preference;
         toolbar_searchIcon= (ImageView) findViewById(R.id.toolbar_search_icon);
         toolbarCart = (ImageView) findViewById(R.id.toolbar_cart_icon);
         toolbarTitle= (TextView) findViewById(R.id.toolbar_title_text);
-        toolbarTitle.setTypeface(montesarrat_bold);
+        toolbarTitle.setTypeface(roboto_bold);
 
 
         cart_countText= (TextView) findViewById(R.id.cart_countText);
