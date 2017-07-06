@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "546529038387",
+    "firebase_url": "https://durga-jewellers.firebaseio.com",
+    "project_id": "durga-jewellers",
+    "storage_bucket": "durga-jewellers.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:546529038387:android:dcff85551e497718",
+        "android_client_info": {
+          "package_name": "com.sdj_jewellers"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "546529038387-b6hnhpj3067mgn5a43kasidkooqb8r0u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8PM-iW8T3TF89SmBc65vK27MWFeGKjDI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

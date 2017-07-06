@@ -20,6 +20,17 @@ public class Preference {
 
     public static final String APP_UPGRADE_TIME="app_upgrade_time";
 
+    public static final String FCM_ID="fcm_id";
+
+    public String getAppFCM_ID() {
+        return sharedpreferences.getString(FCM_ID,"");
+    }
+
+    public void setAppFCM_ID(String fcm_id){
+        editor.putString(FCM_ID,fcm_id);
+        editor.commit();
+    }
+
     public String getAppUpgradeTime() {
         return sharedpreferences.getString(APP_UPGRADE_TIME,"");
     }

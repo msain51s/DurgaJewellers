@@ -78,6 +78,21 @@
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".SearchActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
+
+        <!-- Firebase Notifications -->
+        <service android:name=".notification_service.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <service android:name=".notification_service.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <!-- ./Firebase Notifications -->
+
     </application>
 
 </manifest>
