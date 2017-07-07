@@ -35,6 +35,7 @@ public class CategoryInfoActivity extends BaseActivity implements ResponseListen
     String catId,title,cartId;
     int listItemSelectedPosition=-1;
     ImageView toolbarBasket;
+    int addOrUpdateGlobal;
 
     DB_Handler db_handler;
     Preference preference;
@@ -95,11 +96,12 @@ public class CategoryInfoActivity extends BaseActivity implements ResponseListen
        /* list.get(position).setProduct_quantity(Integer.parseInt(quantity));
         db_handler.addDataToCart(list.get(position));*/
         listItemSelectedPosition=position;
-        if(addOrUpdate==0){
+        addOrUpdateGlobal=addOrUpdate;
+        /*if(addOrUpdate==0){*/
             addProductsToCart(list.get(position),quantity);
-        }else if(addOrUpdate==1){
+        /*}else if(addOrUpdate==1){
             updateCartProduct(list.get(position),quantity);
-        }
+        }*/
     }
     @Override
     protected void onResume() {
@@ -396,8 +398,12 @@ public class CategoryInfoActivity extends BaseActivity implements ResponseListen
                             String status = jsonObject1.getString("status");
                             if (status.equalsIgnoreCase("true")) {
                                 Utils.showCommonInfoPrompt(CategoryInfoActivity.this,"Success",jsonObject1.getString("msg"));
+
+                                /*update cart count*/
+                                if(addOrUpdateGlobal!=1)
                                     preference.setCART_COUNT(preference.getCART_COUNT() + 1);
-                                    cart_countText.setVisibility(View.VISIBLE);
+
+                                cart_countText.setVisibility(View.VISIBLE);
                                     cart_countText.setText(""+preference.getCART_COUNT());
                             } else{
                                 Utils.showCommonInfoPrompt(CategoryInfoActivity.this,"Failed",jsonObject1.getString("msg"));

@@ -381,6 +381,7 @@ public class CartActivity extends BaseActivity implements ResponseListener {
                             JSONArray jsonArray = null;
                             String status = jsonObject1.getString("status");
                             if (status.equalsIgnoreCase("true")) {
+                                preference.setCART_COUNT(0);
                                 Intent intent=new Intent(CartActivity.this,ThanksActivity.class);
                                 startActivity(intent);
                             } else{

@@ -47,6 +47,7 @@ public class SearchActivity extends AppCompatActivity implements ResponseListene
     CategoryInfoAdapter mAdapter;
     int listItemSelectedPosition=-1;
     String cartId;
+    int addOrUpdateGlobal;
 
 
     Preference preference;
@@ -172,11 +173,12 @@ public class SearchActivity extends AppCompatActivity implements ResponseListene
     public void productAddToCart(int position, String quantity, int addOrUpdate){
 
         listItemSelectedPosition=position;
-        if(addOrUpdate==0){
+        addOrUpdateGlobal=addOrUpdate;
+       /* if(addOrUpdate==0){*/
             addProductsToCart(list.get(position),quantity);
-        }else if(addOrUpdate==1){
+        /*}else if(addOrUpdate==1){
             updateCartProduct(list.get(position),quantity);
-        }
+        }*/
     }
 
 
@@ -429,6 +431,8 @@ public class SearchActivity extends AppCompatActivity implements ResponseListene
                             String status = jsonObject1.getString("status");
                             if (status.equalsIgnoreCase("true")) {
                                 Utils.showCommonInfoPrompt(SearchActivity.this,"Success",jsonObject1.getString("msg"));
+
+                            if(addOrUpdateGlobal!=1)
                                 preference.setCART_COUNT(preference.getCART_COUNT() + 1);
 
                             } else{
