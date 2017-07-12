@@ -21,6 +21,16 @@ public class Preference {
     public static final String APP_UPGRADE_TIME="app_upgrade_time";
 
     public static final String FCM_ID="fcm_id";
+    public static final String FCM_ID_SEND_TO_SERVER_TIME="fcm_id_send_to_server_time";
+
+    public boolean isFCM_ID_ServerSendTime() {
+        return sharedpreferences.getBoolean(FCM_ID_SEND_TO_SERVER_TIME,false);
+    }
+
+    public void setFCM_ID_ServerSendTime(boolean fcm_id_server_send_time){
+        editor.putBoolean(FCM_ID_SEND_TO_SERVER_TIME,fcm_id_server_send_time);
+        editor.commit();
+    }
 
     public String getAppFCM_ID() {
         return sharedpreferences.getString(FCM_ID,"");
